@@ -1,15 +1,5 @@
-import { SetStateAction, createContext } from "react";
-
-export interface JokeProps {
-  id: number;
-  joke: string;
-  likes: number;
-}
-
-interface StoreProps {
-  jokes: Array<JokeProps>;
-  setJokes: React.Dispatch<SetStateAction<JokeProps[]>>;
-}
+import { createContext } from "react";
+import { StoreProps } from "./Props";
 
 const Store = createContext<StoreProps>({
   jokes: [],

@@ -1,24 +1,18 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "./Root.css";
 import Store from "../../Context/Store";
 import Container from "../../Components/Container/Container";
 import Title from "../../Components/Title/Title";
 import Button from "../../Components/Button/Button";
 import Joke from "../../Components/Joke/Joke";
+import AddJoke from "../../Components/AddJoke/AddJoke";
 
 const Root: React.FC = () => {
+  const [addJoke, setAddJoke] = useState<boolean>(false);
   const { jokes, setJokes } = useContext(Store);
-  console.log(jokes);
 
   const handleClick = () => {
-    setJokes([
-      ...jokes,
-      {
-        id: Math.floor(Math.random() * 9900000000000000 + 1000000),
-        joke: "Blank Joke",
-        likes: 10,
-      },
-    ]);
+    setAddJoke(!addJoke);
   };
 
   const increaseLike = (id: number) => {
@@ -57,7 +51,8 @@ const Root: React.FC = () => {
     <Container>
       <div className="home">
         <Title title="dad jokes" center />
-        <Button label="add joke" action={handleClick} />
+        {addJoke && <AddJoke setAddJoke={setAddJoke} />}
+        {!addJoke && <Button label="add new joke" action={handleClick} />}
         {jokes.map((joke) => (
           <Joke
             joke={joke}

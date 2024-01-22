@@ -3,7 +3,7 @@ import "./Button.css";
 interface ButtonProps {
   label?: string;
   icon?: string;
-  action: () => void;
+  action: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button: React.FC<ButtonProps> = ({ label, icon, action }) => {

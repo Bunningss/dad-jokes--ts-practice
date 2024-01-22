@@ -1,0 +1,30 @@
+.add-joke {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+}
+
+.joke-input {
+  width: 450px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.joke-input:focus,
+.joke-input:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.error-message {
+  color: lightcoral;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .joke-input {
+    width: 100%;
+  }
+}

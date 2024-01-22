@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 import "./Joke.css";
 import like from "../../assets/like.png";
 import dislike from "../../assets/dislike.png";
-import { JokeProps } from "../../Context/Store";
+import { JokeProps } from "../../Context/Props";
 
 interface JokeComponentProps {
   joke: JokeProps;

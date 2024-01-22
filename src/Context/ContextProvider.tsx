@@ -1,9 +1,8 @@
+import { JokeProps } from "./Props";
 import Store from "./Store";
-import { ReactNode, useState } from "react";
-import { JokeProps } from "./Store";
-
-interface ContextProviderProps {
-  children: ReactNode;
+import { useState } from "react";
+export interface ContextProviderProps {
+  children: React.ReactNode;
 }
 
 const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
